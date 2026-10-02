@@ -1,8 +1,8 @@
 ---
-version: 0.1.0
+version: 0.2.0
 name: recon-brief
 description: |
-  Turn RECON UGC findings into a concrete shoot brief — hooks, beats, and
+  Turn RECON UGC findings into a concrete shoot brief: hooks, beats, and
   shot lists grounded in videos that actually overperformed.
   Use when: "what should I make", "give me video ideas", "write a script
   for TikTok", "turn this into a brief", "what should we shoot this week",
@@ -27,7 +27,7 @@ measurably overperformed, and say which one.
    reconugc search --niche <their category> --period last_30_days --limit 10
    ```
 
-2. **Read 2-3 breakdowns** of the highest outliers:
+2. **Read 2-3 breakdowns** of the videos with the highest Heat Signatures:
 
    ```bash
    reconugc breakdown <post-id>
@@ -45,8 +45,8 @@ measurably overperformed, and say which one.
 ## Brief format
 
 ```
-CONCEPT — <one line, the idea in plain words>
-WHY IT SHOULD WORK — <the mechanism + the evidence: @handle, 32x outlier>
+CONCEPT: <one line, the idea in plain words>
+WHY IT SHOULD WORK: <the mechanism + the evidence: @handle, 32x Heat Signature>
 
 HOOK (0:00-0:02)   <the exact first line, written out>
 BEAT 2 (0:02-0:06) <what happens on screen>
@@ -63,10 +63,10 @@ nobody shoots.
 ## Rules
 
 - **Write hooks as spoken lines**, not descriptions. "POV: you just found out your
-  screenshots were costing you installs" — not "a hook about screenshots".
+  screenshots were costing you installs", not "a hook about screenshots".
 - **Respect what they can actually shoot.** If they have no on-camera talent, do
   not brief a talking head. Ask once if you do not know.
-- **Cite the outlier score** for every concept so the user can see the idea is
+- **Cite the Heat Signature** for every concept so the user can see the idea is
   earned, not invented.
 - **No fabricated trends.** If RECON has no strong examples in their category,
   say so and widen to an adjacent one, naming the swap.

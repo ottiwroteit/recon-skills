@@ -1,5 +1,5 @@
 ---
-version: 0.1.0
+version: 0.2.0
 name: recon-research
 description: |
   Find what is actually working on TikTok using RECON UGC, and explain why.
@@ -8,8 +8,8 @@ description: |
   working", "show me trending formats", "research short-form for my app",
   or any request to study real short-form performance before making
   content. Searches RECON's indexed library, reads beat-by-beat
-  breakdowns, and reports findings weighted by creator-relative outlier
-  score rather than raw views.
+  breakdowns, and reports findings weighted by Heat Signature (how far a
+  video beat its own creator's usual reach) rather than raw views.
   NOT for: comparing tracked brands (use recon-competitors) or turning
   findings into a shoot plan (use recon-brief).
 allowed-tools: Bash
@@ -18,9 +18,12 @@ allowed-tools: Bash
 # RECON research
 
 RECON UGC indexes viral TikToks and scores each one by how far it beat **its own
-creator's** normal reach. That number — the outlier score — is the whole point.
+creator's** normal reach. That number, the **Heat Signature**, is the whole point.
+In raw JSON a video's Heat Signature can appear as `heat_signature`,
+`outlierScore` or `outlier`; a brand's average as `avg_heat_signature` or
+`avg_outlier`.
 
-## Step 0 — make sure RECON is reachable
+## Step 0: make sure RECON is reachable
 
 Prefer the connector if the host supports it; otherwise use the CLI.
 
@@ -35,15 +38,16 @@ If neither is set up, tell the user once:
 
 ## The one rule that matters
 
-**Judge on outlier score, never raw views.**
+**Judge on Heat Signature, never raw views.**
 
-A 40M-view video from a 30M-follower account is unremarkable — it did what that
+A 40M-view video from a 30M-follower account is unremarkable: it did what that
 account always does. A 60K-view video from a 900-follower account that scored 32x
 did something you can actually copy. When you report findings, lead with the
-outlier and treat view count as context only.
+Heat Signature and treat view count as context only.
 
-RECON caps the displayed score at `100x+`. Treat anything at the cap as "extreme
-outlier", not as a precise number.
+Heat Signature is uncapped: a 987x is real, but it usually means a tiny account
+had one breakout. Weigh it alongside the creator's size and how many of their
+videos score well.
 
 ## Workflow
 
@@ -58,7 +62,7 @@ outlier", not as a precise number.
    Filters: `--niche`, `--format`, `--tone`, `--period`
    (`last_7_days` | `last_30_days` | `last_90_days` | `all_time`), `--limit`.
 
-2. **Read the breakdown of the top outliers**, not all of them. Three strong ones
+2. **Read the breakdown of the top few by Heat Signature**, not all of them. Three strong ones
    beat ten mediocre ones.
 
    ```bash
@@ -71,12 +75,12 @@ outlier", not as a precise number.
 3. **Report the pattern, not the list.** The user does not want 10 links. They
    want: "the winners all open on a problem in the first 1.5 seconds, then show
    the result before explaining anything." Cite 2-3 specific videos as evidence,
-   each with its outlier score.
+   each with its Heat Signature.
 
 ## Vocabulary
 
-Say **indexed**, **library**, **breakdown**, **outlier score**. Do not say
-scraped, crawled, vision model, or name any AI model — the user is a marketer, not
+Say **indexed**, **library**, **breakdown**, **Heat Signature**. Do not say
+scraped, crawled, vision model, or name any AI model: the user is a marketer, not
 an engineer.
 
 ## Getting the shape of the library
@@ -95,7 +99,7 @@ is the fastest way to learn valid filter ids instead of guessing.
 | `Not signed in` | Run `reconugc auth login` |
 | `needs a paid RECON plan` | The account is on free; the surface requires Starter or Growth |
 | `at capacity` | Monthly generation ceiling reached; retry later |
-| Empty results | The filter combination is too narrow — drop one filter, do not invent data |
+| Empty results | The filter combination is too narrow: drop one filter, do not invent data |
 
 Never fabricate a video, handle, score, or caption. If RECON returns nothing, say
 so and widen the search.

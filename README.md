@@ -52,7 +52,7 @@ has run (brands keep paying for ads that work) and by how many versions are runn
 |---|---|
 | `recon-research` | Find what is working and explain why: search the library, read beat-by-beat breakdowns |
 | `recon-competitors` | Benchmark against tracked rivals, head-to-head verdicts, format gaps, and the Meta ads a rival is running |
-| `recon-brief` | Turn findings into hooks, beats, and a shot list grounded in real outliers |
+| `recon-brief` | Turn findings into hooks, beats, and a shot list grounded in videos with real Heat Signatures |
 
 ## The idea they all encode
 

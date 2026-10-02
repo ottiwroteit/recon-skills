@@ -1,5 +1,5 @@
 ---
-version: 0.2.0
+version: 0.2.1
 name: recon-competitors
 description: |
   Benchmark a brand against its rivals using RECON UGC's competitor board,
@@ -27,8 +27,9 @@ reconugc competitors                    # defaults to the app category
 reconugc competitors --industry ai-tools
 ```
 
-Each row gives: active creatives, average Heat Signature (the CLI prints it as
-"average outlier"), creative score, engagement rate, top format, and share of voice.
+Each row gives: active creatives, average Heat Signature (`avg_outlier` or
+`avg_heat_signature` in JSON), creative score, engagement rate, top format, and
+share of voice.
 
 ## Reading it honestly
 
