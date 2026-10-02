@@ -19,8 +19,9 @@ allowed-tools: Bash
 
 RECON UGC indexes viral TikToks and scores each one by how far it beat **its own
 creator's** normal reach. That number, the **Heat Signature**, is the whole point.
-In raw JSON it can appear as `heat_signature`, `outlierScore`, `outlier` or
-`avg_outlier`: all the same number.
+In raw JSON a video's Heat Signature can appear as `heat_signature`,
+`outlierScore` or `outlier`; a brand's average as `avg_heat_signature` or
+`avg_outlier`.
 
 ## Step 0: make sure RECON is reachable
 
