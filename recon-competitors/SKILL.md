@@ -27,15 +27,15 @@ reconugc competitors                    # defaults to the app category
 reconugc competitors --industry ai-tools
 ```
 
-Each row gives: active creatives, average outlier, creative score, engagement
-rate, top format, and share of voice.
+Each row gives: active creatives, average Heat Signature (the CLI prints it as
+"average outlier"), creative score, engagement rate, top format, and share of voice.
 
 ## Reading it honestly
 
 - **Share of voice is view-weighted**, so one runaway hit can make a brand look
-  dominant. Always sanity-check it against average outlier and post count before
+  dominant. Always sanity-check it against average Heat Signature and post count before
   calling someone "the leader".
-- **Average outlier is the skill signal.** A brand posting 20 videos at 2x is
+- **Average Heat Signature is the skill signal.** A brand posting 20 videos at 2x is
   running a working system. A brand with one 100x+ fluke and nineteen duds is not.
 - A row marked *still indexing* has no numbers yet. Say that plainly rather than
   reporting it as zero.
@@ -51,7 +51,7 @@ reconugc compare <post-id-a> <post-id-b>
 Returns the winner, the margin, why, and a row-by-row read on hook, pacing,
 format, and proof.
 
-The verdict is decided on **outlier score, not raw views**, otherwise the bigger
+The verdict is decided on **Heat Signature, not raw views**, otherwise the bigger
 account wins every time on audience size alone. When two videos are genuinely
 close, RECON says so; do not manufacture a winner it did not call.
 
