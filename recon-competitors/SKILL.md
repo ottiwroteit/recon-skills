@@ -27,8 +27,9 @@ reconugc competitors                    # defaults to the app category
 reconugc competitors --industry ai-tools
 ```
 
-Each row gives: active creatives, average Heat Signature (older CLI versions
-label it `avg_outlier`), creative score, engagement rate, top format, and share of voice.
+Each row gives: active creatives, average Heat Signature (`avg_outlier` or
+`avg_heat_signature` in JSON), creative score, engagement rate, top format, and
+share of voice.
 
 ## Reading it honestly
 

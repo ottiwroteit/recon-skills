@@ -19,7 +19,8 @@ allowed-tools: Bash
 
 RECON UGC indexes viral TikToks and scores each one by how far it beat **its own
 creator's** normal reach. That number, the **Heat Signature**, is the whole point.
-(Older CLI versions label it `outlier`; it is the same number.)
+In raw JSON it can appear as `heat_signature`, `outlierScore`, `outlier` or
+`avg_outlier`: all the same number.
 
 ## Step 0: make sure RECON is reachable
 
@@ -43,8 +44,9 @@ account always does. A 60K-view video from a 900-follower account that scored 32
 did something you can actually copy. When you report findings, lead with the
 Heat Signature and treat view count as context only.
 
-RECON caps the displayed score at `100x+`. Treat anything at the cap as "extreme",
-not as a precise number.
+Heat Signature is uncapped: a 987x is real, but it usually means a tiny account
+had one breakout. Weigh it alongside the creator's size and how many of their
+videos score well.
 
 ## Workflow
 

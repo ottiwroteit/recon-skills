@@ -27,7 +27,7 @@ measurably overperformed, and say which one.
    reconugc search --niche <their category> --period last_30_days --limit 10
    ```
 
-2. **Read 2-3 breakdowns** of the highest Heat Signatures:
+2. **Read 2-3 breakdowns** of the videos with the highest Heat Signatures:
 
    ```bash
    reconugc breakdown <post-id>
